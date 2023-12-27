@@ -1,0 +1,106 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "yarchi-controls": {
+      "projectType": "library",
+      "root": "projects/yarchi-controls",
+      "sourceRoot": "projects/yarchi-controls/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/yarchi-controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/yarchi-controls/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/yarchi-controls/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/yarchi-controls/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "yarchi-core": {
+      "projectType": "library",
+      "root": "projects/yarchi-core",
+      "sourceRoot": "projects/yarchi-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/yarchi-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/yarchi-core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/yarchi-core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/yarchi-core/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "yarchi-ui-storybook": {
+      "projectType": "library",
+      "root": "projects/yarchi-ui-storybook",
+      "sourceRoot": "projects/yarchi-ui-storybook/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/yarchi-ui-storybook/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/yarchi-ui-storybook/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/yarchi-ui-storybook/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/yarchi-ui-storybook/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
